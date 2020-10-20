@@ -20,21 +20,8 @@ public class Item : ScriptableObject
 
     public virtual void Use()
     {
-        //use item
+        //TODO use item. different use functionalities for different types
         Debug.Log("using " + name);
     }
 
-    //public Item(string name, string desc, int id, ItemType type)
-    //{
-    //    itemName = name;
-    //    itemDescription = desc;
-    //    itemId = id;
-    //    itemType = type;
-    //    itemImage = Resources.Load<Sprite>("ItemIcons/" + name);
-    //}
-
-    //public Item()
-    //{
-        
-    //}
 }

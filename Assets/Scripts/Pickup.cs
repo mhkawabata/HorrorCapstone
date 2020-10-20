@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    //public Transform holdSpot;
-
     public Item item;
     public ParticleSystem particle;
 
