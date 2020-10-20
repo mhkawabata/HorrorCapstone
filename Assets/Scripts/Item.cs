@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[System.Serializable]
-public class Item
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
+public class Item : ScriptableObject
 {
-    public string itemName;
+    public string itemName = "new item";
     public string itemDescription;
     public int itemId;
-    public Texture itemImage;
+    public Sprite itemImage = null;
     public ItemType itemType;
 
     public enum ItemType
@@ -20,17 +18,23 @@ public class Item
         Environment
     }
 
-    public Item(string name, string desc, int id, ItemType type)
+    public virtual void Use()
     {
-        itemName = name;
-        itemDescription = desc;
-        itemId = id;
-        itemType = type;
-        itemImage = Resources.Load<Texture>("ItemIcons/" + name);
+        //use item
+        Debug.Log("using " + name);
     }
 
-    public Item()
-    {
+    //public Item(string name, string desc, int id, ItemType type)
+    //{
+    //    itemName = name;
+    //    itemDescription = desc;
+    //    itemId = id;
+    //    itemType = type;
+    //    itemImage = Resources.Load<Sprite>("ItemIcons/" + name);
+    //}
+
+    //public Item()
+    //{
         
-    }
+    //}
 }

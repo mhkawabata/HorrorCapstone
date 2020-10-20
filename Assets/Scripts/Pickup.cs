@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    public Transform holdSpot;
+    //public Transform holdSpot;
+
+    public Item item;
     public ParticleSystem particle;
-    [SerializeField] Inventory invScript;
 
     private void OnTriggerStay(Collider col)
     {
@@ -15,9 +16,9 @@ public class Pickup : MonoBehaviour
             if (Input.GetButtonDown("Pickup"))
             {
                 particle.Play();
-
-                invScript.AddItem(0);
-                this.gameObject.SetActive(false);
+                Debug.Log("picking up " + item.name);
+                Inventory.instance.AddItem(item);
+                Destroy(gameObject);
             }
         }
     }
