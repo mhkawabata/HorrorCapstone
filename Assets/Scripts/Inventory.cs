@@ -33,8 +33,6 @@ public class Inventory : MonoBehaviour
         {
             DrawInventory();
         }
-
-     
     }
 
     private void Update()
@@ -89,7 +87,7 @@ public class Inventory : MonoBehaviour
         //change mouse? player feedback
     }
 
-    void AddItem(int id)
+    public void AddItem(int id)
     {
         //find empty inv slot
         for(int i = 0; i < inventory.Count; i++)

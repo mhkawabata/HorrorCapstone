@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
     public Transform holdSpot;
     public ParticleSystem particle;
+    [SerializeField] Inventory invScript;
 
     private void OnTriggerStay(Collider col)
     {
@@ -14,10 +15,9 @@ public class Pickup : MonoBehaviour
             if (Input.GetButtonDown("Pickup"))
             {
                 particle.Play();
-                GetComponent<BoxCollider>().enabled = false;
-                GetComponent<Rigidbody>().useGravity = false;
-                this.transform.position = holdSpot.position;
-                this.transform.parent = GameObject.Find("ItemHoldSpot").transform;
+
+                invScript.AddItem(0);
+                this.gameObject.SetActive(false);
             }
         }
     }

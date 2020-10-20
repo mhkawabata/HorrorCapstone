@@ -3566,6 +3566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdSpot: {fileID: 1773321731}
   particle: {fileID: 1898790708}
+  invScript: {fileID: 1095285772}
 --- !u!54 &1370094063
 Rigidbody:
   m_ObjectHideFlags: 0
