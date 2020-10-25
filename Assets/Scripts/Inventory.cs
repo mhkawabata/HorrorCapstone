@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<Item> slots = new List<Item>();
     private bool showInventory = false;
-    private bool highlightBox = false;
+    //private bool highlightBox = false;
     [SerializeField] GameObject invPanel;
     public int space = 15;
 
