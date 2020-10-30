@@ -6,6 +6,13 @@ public class Pickup : MonoBehaviour
 {
     public Item item;
     public ParticleSystem particle;
+    DialogueManager dialogueManager;
+    public Dialogue dialogue;
+
+    private void Start()
+    {
+        dialogueManager = DialogueManager.instance;
+    }
 
     private void OnTriggerStay(Collider col)
     {
@@ -16,6 +23,7 @@ public class Pickup : MonoBehaviour
                 particle.Play();
                 Debug.Log("picking up " + item.name);
                 Inventory.instance.AddItem(item);
+                dialogueManager.StartDialogue(dialogue);
                 Destroy(gameObject);
             }
         }

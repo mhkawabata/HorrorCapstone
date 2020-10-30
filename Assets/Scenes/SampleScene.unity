@@ -2257,7 +2257,7 @@ Transform:
   - {fileID: 2091202618}
   - {fileID: 469790007}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &257929062
 PrefabInstance:
@@ -3297,7 +3297,7 @@ Transform:
   - {fileID: 1375721227}
   - {fileID: 1773321731}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &489230256
 Animator:
@@ -4079,7 +4079,7 @@ Transform:
   - {fileID: 534669905}
   - {fileID: 1569778145}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &656677434 stripped
 Transform:
@@ -4402,7 +4402,7 @@ Transform:
   - {fileID: 1945269449}
   - {fileID: 483336310}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &723023006
 GameObject:
@@ -5499,7 +5499,7 @@ RectTransform:
   - {fileID: 827623704}
   - {fileID: 1180155923}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6196,7 +6196,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1156450530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1259153677}
+        m_MethodName: DisplayNextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1156450530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6395,6 +6406,7 @@ GameObject:
   - component: {fileID: 1180155923}
   - component: {fileID: 1180155925}
   - component: {fileID: 1180155924}
+  - component: {fileID: 1180155926}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -6420,7 +6432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: -504}
+  m_AnchoredPosition: {x: 0, y: -504}
   m_SizeDelta: {x: 1475, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180155924
@@ -6458,6 +6470,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180155922}
   m_CullTransparentMesh: 0
+--- !u!95 &1180155926
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180155922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 841a3d9b5c4ed33479788f29fea66615, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1182390048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6915,7 +6946,7 @@ Transform:
   m_Children:
   - {fileID: 899022549}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -1.7490001, y: -26.551, z: -0.033}
 --- !u!114 &1230591233
 MonoBehaviour:
@@ -6947,6 +6978,51 @@ MonoBehaviour:
   m_Damping: 0
   m_DampingWhenOccluded: 0
   m_OptimalTargetDistance: 1
+--- !u!1 &1259153676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259153678}
+  - component: {fileID: 1259153677}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1259153677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259153676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139795da85112d145a8b8e302e184614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1353758132}
+  animator: {fileID: 1180155926}
+--- !u!4 &1259153678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259153676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1263409895 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8975522172604770231, guid: f319abba7136ea44eb68072a2b959034,
@@ -7766,7 +7842,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: asdasjdshadjkasdhkjasdh asdkjnaskjdna
+  m_Text: 
 --- !u!222 &1353758133
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7853,6 +7929,7 @@ GameObject:
   - component: {fileID: 1370094063}
   - component: {fileID: 1370094062}
   - component: {fileID: 1370094064}
+  - component: {fileID: 1370094065}
   m_Layer: 0
   m_Name: key
   m_TagString: Untagged
@@ -7946,6 +8023,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 2b4594487261cee4d9a284d242bf1399, type: 2}
   particle: {fileID: 1898790708}
+  dialogue:
+    sentences:
+    - dfdsfsdfdsfsd
+    - huiiiiiiiiii
 --- !u!54 &1370094063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7975,6 +8056,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 7
   m_Center: {x: 0, y: 0, z: -0.00000052526593}
+--- !u!114 &1370094065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370094057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c82a64991c5b224e858b3dafead0e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - hello, i am a doll. hehehehee
+    - poopity spoopity
 --- !u!1 &1375721226
 GameObject:
   m_ObjectHideFlags: 0
@@ -15414,7 +15511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -172.423, y: 12.916992, z: -56.23999}
 --- !u!4 &1916037301 stripped
 Transform:
@@ -16953,7 +17050,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2067278268
 PrefabInstance:
