@@ -7,6 +7,8 @@ public class Pickup : MonoBehaviour
     public Item item;
     public ParticleSystem particle;
     DialogueTrigger dialogueTrigger;
+    Key key;
+    KeyHolder keyHolder;
 
     private void Start()
     {
@@ -20,13 +22,31 @@ public class Pickup : MonoBehaviour
         {
             if (Input.GetButtonDown("Pickup"))
             {
-                particle.Play();
-                Debug.Log("picking up " + item.name);
-                dialogueTrigger.TriggerDialogue();
-                Inventory.instance.AddItem(item);
+                ItemPickup();
                 Destroy(gameObject);
             }
         }
+
+        else if (col == null)
+            return;
+    }
+
+    private void ItemPickup()
+    {
+    //play particle effect if any, trigger dialogue, add to inventory
+        if (particle != null){
+            particle.Play();
+        }
+        dialogueTrigger.TriggerDialogue();
+        Inventory.instance.AddItem(item);
+
+    //if it is a key, add to keyholder
+        key = GetComponent<Key>();
+        if (key != null)
+        {
+            KeyHolder.instance.AddKey(key.GetKeyType());
+        }
+        else return;
     }
 
 }

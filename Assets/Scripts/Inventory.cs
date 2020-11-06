@@ -8,9 +8,9 @@ public class Inventory : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
     public List<Item> slots = new List<Item>();
-    private bool showInventory = false;
+    //private bool showInventory = false;
     //private bool highlightBox = false;
-    [SerializeField] GameObject invPanel;
+    [SerializeField] GameObject invPanel = null;
     public int space = 15;
 
     public delegate void OnItemChanged();
@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
       
     }
 
-    void RemoveItem(Item item)
+    public void RemoveItem(Item item)
     {
         items.Remove(item);
 

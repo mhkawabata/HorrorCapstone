@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 33485690003626002}
   - component: {fileID: 23722170975101654}
   - component: {fileID: 65558739152625350}
+  - component: {fileID: 235366189}
+  - component: {fileID: 235366191}
   m_Layer: 0
   m_Name: Neo_Door_01_snaps001
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1191596092261060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.449801, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,3 +94,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 2.25, z: 0.08727096}
   m_Center: {x: 0.625, y: 1.125, z: -0.0018848106}
+--- !u!65 &235366189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191596092261060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2500002, y: 2.25, z: 0.6133214}
+  m_Center: {x: 0.62500006, y: 1.125, z: 0.21681696}
+--- !u!114 &235366191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191596092261060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd40bbdd5af68454aa3763364f37ca3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyType: 0
+  doorAnimator: {fileID: 0}

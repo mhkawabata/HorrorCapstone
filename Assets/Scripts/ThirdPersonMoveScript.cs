@@ -6,6 +6,7 @@ public class ThirdPersonMoveScript : MonoBehaviour
 {
     public CharacterController controller;
     private Animator animator;
+    UI ui;
 
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
@@ -14,14 +15,14 @@ public class ThirdPersonMoveScript : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        ui = UI.instance;
     }
     void Update()
     {
+    //movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
-
-    
 
         if (direction.magnitude >= 0.1f)
         {
@@ -35,10 +36,10 @@ public class ThirdPersonMoveScript : MonoBehaviour
 
         else animator.SetBool("walk", false);
 
+     //pick up item
         if (Input.GetButtonDown("Pickup"))
-        {
             StartCoroutine(ItemPickup());
-        }
+        
     }
 
     IEnumerator ItemPickup()
@@ -47,4 +48,16 @@ public class ThirdPersonMoveScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         animator.SetBool("pickup", false);
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Enemy")
+        {
+            ui.Die();
+        }
+
+        else return;
+    }
+
+    
 }

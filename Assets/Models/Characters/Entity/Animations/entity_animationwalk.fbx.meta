@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 2658586e10359ea468f4b66bceea3457
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: DEF-breast.L
+    100002: DEF-breast.R
+    100004: DEF-foot.L
+    100006: DEF-foot.R
+    100008: DEF-pelvis.L
+    100010: DEF-pelvis.R
+    100012: DEF-shin.L
+    100014: DEF-shin.L.001
+    100016: DEF-shin.R
+    100018: DEF-shin.R.001
+    100020: DEF-spine
+    100022: DEF-spine.001
+    100024: DEF-spine.002
+    100026: DEF-spine.003
+    100028: DEF-spine.004
+    100030: DEF-spine.005
+    100032: DEF-spine.006
+    100034: DEF-thigh.L
+    100036: DEF-thigh.L.001
+    100038: DEF-thigh.R
+    100040: DEF-thigh.R.001
+    100042: DEF-toe.L
+    100044: DEF-toe.R
+    100046: //RootNode
+    100048: Merged 2.001
+    100050: ORG-breast.L
+    100052: ORG-breast.R
+    100054: ORG-pelvis.L
+    100056: ORG-pelvis.R
+    100058: ORG-spine
+    100060: ORG-spine.001
+    100062: ORG-spine.002
+    100064: ORG-spine.003
+    100066: rig
+    100068: root
+    400000: DEF-breast.L
+    400002: DEF-breast.R
+    400004: DEF-foot.L
+    400006: DEF-foot.R
+    400008: DEF-pelvis.L
+    400010: DEF-pelvis.R
+    400012: DEF-shin.L
+    400014: DEF-shin.L.001
+    400016: DEF-shin.R
+    400018: DEF-shin.R.001
+    400020: DEF-spine
+    400022: DEF-spine.001
+    400024: DEF-spine.002
+    400026: DEF-spine.003
+    400028: DEF-spine.004
+    400030: DEF-spine.005
+    400032: DEF-spine.006
+    400034: DEF-thigh.L
+    400036: DEF-thigh.L.001
+    400038: DEF-thigh.R
+    400040: DEF-thigh.R.001
+    400042: DEF-toe.L
+    400044: DEF-toe.R
+    400046: //RootNode
+    400048: Merged 2.001
+    400050: ORG-breast.L
+    400052: ORG-breast.R
+    400054: ORG-pelvis.L
+    400056: ORG-pelvis.R
+    400058: ORG-spine
+    400060: ORG-spine.001
+    400062: ORG-spine.002
+    400064: ORG-spine.003
+    400066: rig
+    400068: root
+    2100000: Default OBJ.001
+    4300000: Merged 2.001
+    7400000: rig|rigAction
+    9500000: //RootNode
+    13700000: Merged 2.001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rig|rigAction
+      takeName: rig|rigAction
+      firstFrame: 0
+      lastFrame: 111
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
