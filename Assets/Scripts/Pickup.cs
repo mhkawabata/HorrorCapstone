@@ -12,32 +12,43 @@ public class Pickup : MonoBehaviour
 
     private void Start()
     {
-        dialogueTrigger = GetComponent<DialogueTrigger>();
-        
+        dialogueTrigger = GetComponent<DialogueTrigger>();  
     }
 
-    private void OnTriggerStay(Collider col)
+    //private void OnTriggerStay(Collider col)
+    //{
+    //    if (col.CompareTag("Player"))
+    //    {
+    //        if (Input.GetButtonDown("Pickup"))
+    //        {
+    //            ItemPickup();
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //    else return;
+    //}
+
+    private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Player"))
         {
-            if (Input.GetButtonDown("Pickup"))
-            {
+            //if (Input.GetButtonDown("Pickup"))
+            //{
                 ItemPickup();
                 Destroy(gameObject);
-            }
+            //}
         }
-
-        else if (col == null)
-            return;
+        else return;
     }
 
     private void ItemPickup()
     {
     //play particle effect if any, trigger dialogue, add to inventory
-        if (particle != null){
-            particle.Play();
-        }
-        dialogueTrigger.TriggerDialogue();
+        if (particle != null)particle.Play();
+
+        if(dialogueTrigger != null)
+            dialogueTrigger.TriggerDialogue();
+
         Inventory.instance.AddItem(item);
 
     //if it is a key, add to keyholder

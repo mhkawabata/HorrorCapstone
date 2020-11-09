@@ -7,7 +7,7 @@ public class ThirdPersonMoveScript : MonoBehaviour
     public CharacterController controller;
     private Animator animator;
     UI ui;
-
+    [SerializeField] bool wasdMove = false;
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -19,22 +19,47 @@ public class ThirdPersonMoveScript : MonoBehaviour
     }
     void Update()
     {
-    //movement
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
-
-        if (direction.magnitude >= 0.1f)
+        if(wasdMove == false)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            //movement
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
 
-            controller.Move(direction * speed * Time.deltaTime);
-            animator.SetBool("walk", true);
+            if (direction.magnitude >= 0.1f)
+            {
+            //rotate model to direction of movement
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            //move, play walk animation
+                controller.Move(direction * speed * Time.deltaTime);
+                animator.SetBool("walk", true);
+            }
+            else animator.SetBool("walk", false);
         }
+    
+        else if(wasdMove == true)
+        {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(vertical, 0, -horizontal).normalized;
 
-        else animator.SetBool("walk", false);
+            if(direction.magnitude >= 0.1f)
+            {
+            //rotate model to direction of movement
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0, angle, 0);
+
+            //move, play walk animation
+                controller.Move(direction * speed * Time.deltaTime);
+                animator.SetBool("walk", true);
+            }
+            else animator.SetBool("walk", false);
+        }
+        
 
      //pick up item
         if (Input.GetButtonDown("Pickup"))
@@ -47,16 +72,6 @@ public class ThirdPersonMoveScript : MonoBehaviour
         animator.SetBool("pickup", true);
         yield return new WaitForSeconds(1f);
         animator.SetBool("pickup", false);
-    }
-
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Enemy")
-        {
-            ui.Die();
-        }
-
-        else return;
     }
 
     
