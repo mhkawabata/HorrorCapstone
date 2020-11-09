@@ -53,7 +53,7 @@ public class UI : MonoBehaviour
 
     public void Restart(){
 //restart
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void ExitGame(){
