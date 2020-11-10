@@ -13,8 +13,10 @@ public class Inventory : MonoBehaviour
     [SerializeField] GameObject invPanel = null;
     public int space = 15;
 
-    public delegate void OnItemChanged();
-    public OnItemChanged onItemChangedCallback;
+    public delegate void OnItemChangedDelegate();
+    public OnItemChangedDelegate onItemChangedCallback;
+
+    InventoryUI inventoryUI;
 
     #region Singleton
     public static Inventory instance;
@@ -30,33 +32,24 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        //onItemChangedCallback += InventoryUI.instance.UpdateUI;
+    }
 
     private void Update()
     {
         if (Input.GetButtonDown("Inventory"))
-            DrawInventory();
-    }
-
-    void DrawInventory()
-    {
-        invPanel.SetActive(!invPanel.activeInHierarchy);
-    }
-
-    void HighlightItem()
-    {
-        //TODO
-        //change background of box?
-        //highlight item with border
-        //change mouse? player feedback
+            invPanel.SetActive(!invPanel.activeInHierarchy);
     }
 
     public void AddItem(Item item)
     {
         items.Add(item);
 
-        if(onItemChangedCallback != null)
-            onItemChangedCallback.Invoke();
-      
+        if (onItemChangedCallback != null)
+            onItemChangedCallback();
+
     }
 
     public void RemoveItem(Item item)
@@ -68,7 +61,14 @@ public class Inventory : MonoBehaviour
         
     }
 
- 
+    void HighlightItem()
+    {
+        //TODO
+        //change background of box?
+        //highlight item with border
+        //change mouse? player feedback
+    }
+
 
 
 }

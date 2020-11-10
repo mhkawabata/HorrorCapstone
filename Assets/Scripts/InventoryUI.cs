@@ -5,14 +5,14 @@ public class InventoryUI : MonoBehaviour
     public Transform itemsParent;
     InventorySlot[] slots;
 
+
     void Start()
     {
-        Inventory.instance.onItemChangedCallback += UpdateUI;
-
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        Inventory.instance.onItemChangedCallback += UpdateUI;
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         for(int i = 0; i < slots.Length; i++)
         {
