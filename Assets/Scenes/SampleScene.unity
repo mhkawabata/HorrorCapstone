@@ -15447,12 +15447,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4395774806791349096, guid: 3b1e86db7df730e439176970c6331bf6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4395774806791349108, guid: 3b1e86db7df730e439176970c6331bf6,
         type: 3}
       propertyPath: wasdMove
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4395774806791349096, guid: 3b1e86db7df730e439176970c6331bf6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b1e86db7df730e439176970c6331bf6, type: 3}
 --- !u!1001 &4525165730600781479
 PrefabInstance:

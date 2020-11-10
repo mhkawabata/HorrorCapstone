@@ -15,31 +15,19 @@ public class Pickup : MonoBehaviour
         dialogueTrigger = GetComponent<DialogueTrigger>();  
     }
 
-    //private void OnTriggerStay(Collider col)
-    //{
-    //    if (col.CompareTag("Player"))
-    //    {
-    //        if (Input.GetButtonDown("Pickup"))
-    //        {
-    //            ItemPickup();
-    //            Destroy(gameObject);
-    //        }
-    //    }
-    //    else return;
-    //}
-
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
         if (col.CompareTag("Player"))
         {
-            //if (Input.GetButtonDown("Pickup"))
-            //{
+            if (Input.GetButtonDown("Pickup"))
+            {
                 ItemPickup();
                 Destroy(gameObject);
-            //}
+            }
         }
         else return;
     }
+
 
     private void ItemPickup()
     {
