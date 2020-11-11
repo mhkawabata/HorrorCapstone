@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ThirdPersonMoveScript : MonoBehaviour
 {
+    public static ThirdPersonMoveScript instance;
     public CharacterController controller;
     private Animator animator;
-    UI ui;
-    [SerializeField] bool wasdMove = false;
+    public bool wasdMove = false;
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -15,7 +15,7 @@ public class ThirdPersonMoveScript : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        ui = UI.instance;
+        instance = this;
     }
     void Update()
     {
