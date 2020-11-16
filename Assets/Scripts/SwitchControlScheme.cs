@@ -7,5 +7,6 @@ public class SwitchControlScheme : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ThirdPersonMoveScript.instance.wasdMove = false;
+        ThirdPersonMoveScript.instance.thirdMove = false;
     }
 }
