@@ -18,9 +18,10 @@ public class Item : ScriptableObject
         Environment
     }
 
-    public virtual void Use()
+    public void Use(Item item)
     {
         //TODO use item. different use functionalities for different types
+        Inventory.instance.RemoveItem(item);
         Debug.Log("using " + name);
     }
 

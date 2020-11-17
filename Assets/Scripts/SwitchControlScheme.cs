@@ -6,7 +6,12 @@ public class SwitchControlScheme : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        ThirdPersonMoveScript.instance.wasdMove = false;
-        ThirdPersonMoveScript.instance.thirdMove = false;
+        if(other.tag == "Player")
+        {
+            ThirdPersonMoveScript.instance.wasdMove = false;
+            ThirdPersonMoveScript.instance.thirdMove = false;
+            ThirdPersonMoveScript.instance.fourthMove = false;
+        }
+        
     }
 }

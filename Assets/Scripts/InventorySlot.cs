@@ -24,7 +24,8 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
+        //TODO check if item is usable in that context
         if(item != null)
-            item.Use();
+            item.Use(item);
     }
 }

@@ -43,7 +43,6 @@ public class Entity : MonoBehaviour
 
     private void Patrol()
     {
-        Debug.Log("patrolling");
         if (!walkPointSet) SearchForWalkPoint();
         if (walkPointSet) agent.SetDestination(walkPoint);
 
@@ -54,7 +53,6 @@ public class Entity : MonoBehaviour
 
     private void SearchForWalkPoint()
     {
-        Debug.Log("searching for walk point");
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
@@ -62,13 +60,11 @@ public class Entity : MonoBehaviour
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundLayer))
         {
             walkPointSet = true;
-            Debug.Log("found walk point");
         }
     }
 
     private void Chase()
     {
-        Debug.Log("chasing");
         agent.SetDestination(player.transform.position);
     }
 
@@ -91,13 +87,13 @@ public class Entity : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            UI.instance.Die();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.tag == "Player")
+    //    {
+    //        UI.instance.Die();
+    //    }
+    //}
 
     private void OnDrawGizmosSelected()
     {

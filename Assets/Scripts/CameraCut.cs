@@ -9,8 +9,8 @@ public class CameraCut : MonoBehaviour
     public void OnCut()
     {
         //StartCoroutine(CutWait());
-        timer -= Time.deltaTime;
-        if (timer <= 0)
+        //timer -= Time.deltaTime;
+        //if (timer <= 0)
             Debug.Log("cut");
     }
 
