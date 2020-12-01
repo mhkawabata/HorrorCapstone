@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: movieTicket
   m_EditorClassIdentifier: 
   itemName: movie ticket
-  itemDescription: sfsfsf
+  itemDescription: An old ticket stub. A reminder of a youthful memory.
   itemId: 3
   itemImage: {fileID: 0}
   itemType: 1

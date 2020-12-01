@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: artSupplies
   m_EditorClassIdentifier: 
   itemName: art supplies
-  itemDescription: 
+  itemDescription: Art supplies for the creative spirit.
   itemId: 2
   itemImage: {fileID: 0}
   itemType: 0

@@ -8,6 +8,7 @@ public class Item : ScriptableObject
     public int itemId;
     public Sprite itemImage = null;
     public ItemType itemType;
+    public bool isUsableHere = false;
 
     public enum ItemType
     {
@@ -18,9 +19,10 @@ public class Item : ScriptableObject
         Environment
     }
 
-    public virtual void Use()
+    public void Use(Item item)
     {
         //TODO use item. different use functionalities for different types
+        Inventory.instance.RemoveItem(item);
         Debug.Log("using " + name);
     }
 

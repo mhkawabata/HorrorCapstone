@@ -8,8 +8,15 @@ public class LockedDoor : MonoBehaviour
     [SerializeField] private Key.KeyType keyType;
     [SerializeField] Animator doorAnimator;
     [SerializeField] Item keyNeeded;
+    public Dialogue dialogue;
+
+    private void Awake(){
+//enqueue sentence with correct key type needed
+        dialogue.sentences = new string[] {"I used the " + keyType + " key to open the door."};
+    }
 
     public Key.KeyType GetKeyType(){
+//return keytype needed for this door
         return keyType;
     }
 
@@ -23,12 +30,13 @@ public class LockedDoor : MonoBehaviour
                 KeyHolder.instance.RemoveKey(this.GetKeyType());
                 Inventory.instance.RemoveItem(keyNeeded);
             }
-            else Debug.Log("dont have the right key");
+            //else TODO insert locked door sound
         }
     }
 
     private void OpenDoor(){
-//play door opening animation
+//door open animation; dialogue triggered
         doorAnimator.SetBool("isOpen", true);
+        DialogueManager.instance.StartDialogue(dialogue);
     }
 }

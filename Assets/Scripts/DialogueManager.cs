@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("more than one instance of inventory found");
+            Debug.LogWarning("more than one instance of dialogue maneger found");
             return;
         }
 
@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     //opens text box and adds sentences to queue. calls display function
     {
-        //nameText.text = dialogue.name;
+ 
         animator.SetBool("isOpen", true);
         continueButton.SetActive(true);
         sentences.Clear();

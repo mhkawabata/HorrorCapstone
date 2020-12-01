@@ -8,15 +8,15 @@ public class Inventory : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
     public List<Item> slots = new List<Item>();
-    //private bool showInventory = false;
-    //private bool highlightBox = false;
     [SerializeField] GameObject invPanel = null;
     public int space = 15;
 
     public delegate void OnItemChangedDelegate();
     public OnItemChangedDelegate onItemChangedCallback;
 
-    InventoryUI inventoryUI;
+
+    //private bool showInventory = false;
+    //private bool highlightBox = false;
 
     #region Singleton
     public static Inventory instance;
@@ -32,10 +32,6 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    private void Start()
-    {
-        //onItemChangedCallback += InventoryUI.instance.UpdateUI;
-    }
 
     private void Update()
     {
