@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+
+//creatable class in unity. embedded in dialogueTrigger script for objects with dialogue on them
 public class Dialogue 
 {
-    //uncomment name var if you want name of speaker to show
-    //public string name;
-
     [TextArea(2, 10)]
     public string[] sentences;
 }

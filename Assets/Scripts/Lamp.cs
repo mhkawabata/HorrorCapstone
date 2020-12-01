@@ -4,31 +4,59 @@ using UnityEngine;
 
 public class Lamp : MonoBehaviour
 {
+  //Lightbulbs are only usable when in range of a lamp.
+
     [SerializeField] Item lightbulb;
     [SerializeField] GameObject bulbSpot;
     [SerializeField] GameObject lightBulbPrefab;
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Player")
-        {
+
+    private void OnTriggerEnter(Collider other){
+        if(other.tag == "Player"){
+
             if (Inventory.instance.items.Contains(lightbulb))
             {
-                if (bulbSpot != null)
-                {
-                    lightBulbPrefab.transform.parent = bulbSpot.transform;
-                    Debug.Log("used lightbulb");
+                int count = 0;
+                foreach (Item itemsInList in Inventory.instance.items){
+                    if (Inventory.instance.items[count].name == "lightbulb")
+                    {
+                        Inventory.instance.items[count].isUsableHere = true;
+                        Debug.Log(Inventory.instance.items[count] + " active");
+                    }
+                     
+                    count++;
                 }
             }
+        }
+    }
 
-            else Debug.Log("no lightbulb");
-          
-            //if player presses 'use' on lightbulb
-            //remove bulb from inventory
-            //parent bulb to the bulbSpot
-            //turn on the light component
+    private void OnTriggerExit(Collider other){
+        if(other.tag == "Player"){
 
-           //lightbulb = GetComponent<>
-            
+            if (Inventory.instance.items.Contains(lightbulb))
+            {
+                int count = 0;
+                foreach (Item itemsInList in Inventory.instance.items)
+                {
+                    if (Inventory.instance.items[count].name == "lightbulb")
+                    {
+                        Inventory.instance.items[count].isUsableHere = false;
+                        Debug.Log(Inventory.instance.items[count] + " not active");
+                    }
+                        
+                    count++;
+                }
+            }
+        }   
+    }
+
+    public void UseLightbulb()
+    {
+        if (bulbSpot != null)
+        {
+            GameObject bulb = Instantiate(lightBulbPrefab, bulbSpot.transform.position, Quaternion.identity);
+            Light light = bulb.GetComponentInChildren<Light>();
+            light.enabled = true;
+            Inventory.instance.RemoveItem(lightbulb);
         }
     }
 }

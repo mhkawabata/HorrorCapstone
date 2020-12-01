@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd01edf0410cb8a479e680c8e89850dc, type: 3}
   m_Name: cast
   m_EditorClassIdentifier: 
-  itemName: new item
-  itemDescription: cast
+  itemName: cast
+  itemDescription: An ankle cast worn by your sister when she fell and broke her leg
+    many years ago.
   itemId: 1
   itemImage: {fileID: 21300000, guid: 0d71f4abf2cfb284a824ad427e8c8650, type: 3}
   itemType: 0
