@@ -6,21 +6,19 @@ public class InventorySlot : MonoBehaviour
     public Image icon;
     Item item;
     GameObject player;
+    public Dialogue dialogue;
 
     //spherecast vars
-    private Vector3 origin;
-    private float sphereRadius = 6f;
-    private Vector3 direction;
-    private float maxDistance = 6f;
+    private float sphereRadius = 1f;
     private LayerMask layerMask;
     public GameObject currentHitObj;
-    private bool foundHit = false;
     Lamp lamp;
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         layerMask = LayerMask.GetMask("Lamps");
+        dialogue.sentences = new string[] { "I can't use that here.." };
     }
     public void AddItem(Item newItem)
     {
@@ -44,36 +42,32 @@ public class InventorySlot : MonoBehaviour
         //check if item exists & is usable
         if (item != null && item.isUsableHere == true)
         {
-            //if lightbulb, use light. else use normally
+            //if lightbulb, check if there is a lamp in range to plug it into
             if (item.name == "lightbulb")
             {
-                foundHit = false;
-                origin = player.transform.position;
-                direction = player.transform.forward;
-                RaycastHit hit;
-
-                //layerMask, QueryTriggerInteraction.UseGlobal
-
-                //spherecast to check for nearby lamps
-                foundHit = (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, layerMask, QueryTriggerInteraction.Collide));
-                    if(foundHit)
+                Collider[] hitColliders = Physics.OverlapSphere(player.transform.position, sphereRadius, layerMask, QueryTriggerInteraction.Ignore);
+                foreach (var hitCollider in hitColliders)
                 {
-                    //if(hit.collider.gameObject != null)
-                    Debug.Log("hit " + hit);
-                    //currentHitObj = hit.transform.gameObject;
-                    //if (currentHitObj.GetComponent<Lamp>() != null)
-                    //Debug.Log("got lamp comp");
-                    //lamp = currentHitLamp.GetComponent<Lamp>();
-                    //lamp.UseLightbulb();
+                    if (hitCollider.gameObject != null)
+                    {
+                        lamp = hitCollider.gameObject.GetComponent<Lamp>();
+                        lamp.UseLightbulb();
+                    }
+                    else return;
                 }
-                else Debug.Log("no hit");
-                //currentHitObject = hit.transform.gameObject;
-                //lamp.UseLightbulb();
             }
-            else item.Use(item);
+            else
+            {
+                item.Use(item);
+                Debug.Log("using non lightbulb");
+            }
         }
-        else Debug.Log("cant use here");
-            
+        //if it cant be used here, pop up dialogue
+        else
+        {
+            DialogueManager.instance.StartDialogue(dialogue);
+            Debug.Log("canbt use here");
+        }
     }
 
 
