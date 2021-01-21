@@ -10,7 +10,9 @@ public class Lamp : MonoBehaviour
     [SerializeField] GameObject bulbSpot;
     [SerializeField] GameObject lightBulbPrefab;
 
+
     private void OnTriggerEnter(Collider other){
+ //enable usage of lightbulbs from inventory while in range
         if(other.tag == "Player"){
 
             if (Inventory.instance.items.Contains(lightbulb))
@@ -22,7 +24,6 @@ public class Lamp : MonoBehaviour
                         Inventory.instance.items[count].isUsableHere = true;
                         Debug.Log(Inventory.instance.items[count] + " active");
                     }
-                     
                     count++;
                 }
             }
@@ -30,7 +31,8 @@ public class Lamp : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other){
-        if(other.tag == "Player"){
+ //disable usage of lightbulbs from inventory while out of range
+        if (other.tag == "Player"){
 
             if (Inventory.instance.items.Contains(lightbulb))
             {
@@ -41,19 +43,20 @@ public class Lamp : MonoBehaviour
                     {
                         Inventory.instance.items[count].isUsableHere = false;
                         Debug.Log(Inventory.instance.items[count] + " not active");
-                    }
-                        
+                    }  
                     count++;
                 }
             }
         }   
     }
 
+
     public void UseLightbulb()
     {
         if (bulbSpot != null)
         {
             GameObject bulb = Instantiate(lightBulbPrefab, bulbSpot.transform.position, Quaternion.identity);
+            bulb.transform.parent = bulbSpot.transform;
             Light light = bulb.GetComponentInChildren<Light>();
             light.enabled = true;
             Inventory.instance.RemoveItem(lightbulb);

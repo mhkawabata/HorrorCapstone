@@ -7,6 +7,11 @@ TagManager:
   - Enemy
   - camAngle1
   - camAngle2
+  - Block A
+  - Block D
+  - Block I
+  - Block E
+  - Block P
   layers:
   - Default
   - TransparentFX
@@ -21,7 +26,7 @@ TagManager:
   - Floors
   - Player
   - Lamps
-  - 
+  - Blocks
   - 
   - 
   - 

@@ -17,3 +17,4 @@ MonoBehaviour:
   itemId: 10
   itemImage: {fileID: 21300000, guid: a90547d34b34e67458aa7f0482b84a46, type: 3}
   itemType: 4
+  isUsableHere: 0
