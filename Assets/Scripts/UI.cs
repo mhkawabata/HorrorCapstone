@@ -32,7 +32,7 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
-        resolutionDropdown.ClearOptions();
+        //resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
         resolutions = Screen.resolutions;
         int currentResolutionIndex = 0;
@@ -57,8 +57,12 @@ public class UI : MonoBehaviour
     }
 
     public void ExitGame(){
-//quit
-        Application.Quit();
+        //quit
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
     }
     public void Die(){
 //die
