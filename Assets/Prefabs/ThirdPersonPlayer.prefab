@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 4395774806791349111}
   - component: {fileID: 4395774806791349108}
   - component: {fileID: 4395774806791349097}
-  - component: {fileID: 4395774806791349096}
   - component: {fileID: 4395774806791349099}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ThirdPersonPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4395774806791349109}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 4395774807669357522}
   - {fileID: 4395774808075490010}
@@ -54,7 +53,7 @@ CharacterController:
   m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.3, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &4395774806791349108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,11 +67,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4395774806791349111}
-  wasdMove: 0
+  wasdMove: 1
   thirdMove: 0
   fourthMove: 0
   movementEnabled: 1
-  speed: 6
+  speed: 3
   turnSmoothTime: 0.1
 --- !u!95 &4395774806791349097
 Animator:
@@ -83,7 +82,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4395774806791349109}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 20e0b32a79ad2b24c8a0d6cf319ee070, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 9e1d6da54c7336d46ba660fcc03d9b4b, type: 3}
   m_Controller: {fileID: 9100000, guid: b1d8a1ef61c1576478932f5b0ae58565, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -93,20 +92,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &4395774806791349096
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4395774806791349109}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!114 &4395774806791349099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,15 +225,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400228, guid: 9e1d6da54c7336d46ba660fcc03d9b4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02263
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400228, guid: 9e1d6da54c7336d46ba660fcc03d9b4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.904
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400228, guid: 9e1d6da54c7336d46ba660fcc03d9b4b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.010699
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400228, guid: 9e1d6da54c7336d46ba660fcc03d9b4b, type: 3}
       propertyPath: m_LocalRotation.x
